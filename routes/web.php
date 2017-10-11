@@ -11,7 +11,7 @@
 |
 */
 Route::get('about',function(){
-	return  'about page';
+	return  'yo homeslice this is the about page';
 });
 Route::get('/', function () {
     return view('welcome');
