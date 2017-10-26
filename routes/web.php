@@ -10,9 +10,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('about',function(){
-	return  'yo homeslice this is the about page';
+
+
+//from the video
+Route::post('/tasks', 'TasksController@store');
+Route::get('/tasks','TasksController@index');
+Route::get('/tasks/create', 'TasksController@create');
+Route::get('/tasks/{task}','TasksController@show');
+Route::patch('/tasks/{task}/edit', 'TasksController@edit');
+Route::delete('/tasks/{task}/delete', 'TasksController@destroy');
+Route::get('/tasks/{task}', 'TasksController@show');
+
+Route::get('/',function(){
+    return  view('welcome');
 });
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+
+
