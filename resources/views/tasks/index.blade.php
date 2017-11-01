@@ -5,6 +5,7 @@
     <li>
         <a href="/heroku/public/tasks/{{$task->id}}">
             {{$task->body}}
+            {{$task->completed}}
         </a>
 
 
@@ -15,3 +16,4 @@
 
 
 
+@endsection

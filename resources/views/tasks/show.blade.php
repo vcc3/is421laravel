@@ -6,5 +6,7 @@
     </h1>
 
     <p>{{$task->body}}</p>
+    <p>{{$task->completed}}</p>
+    <a href="/heroku/public/tasks/{{$task->id}}/edit">Link to Edit page</a>
 
 @endsection

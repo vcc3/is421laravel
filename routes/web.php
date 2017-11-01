@@ -14,10 +14,12 @@
 
 //from the video
 Route::post('/tasks', 'TasksController@store');
+Route::get('/tasks/test','TasksController@test');
 Route::get('/tasks','TasksController@index');
 Route::get('/tasks/create', 'TasksController@create');
-Route::get('/tasks/{task}','TasksController@show');
-Route::patch('/tasks/{task}/edit', 'TasksController@edit');
+Route::get('/tasks/{task}', 'TasksController@show');
+Route::get('/tasks/{task}/edit', 'TasksController@edit');
+Route::patch('/tasks/{task}/edit', 'TasksController@update');
 Route::delete('/tasks/{task}/delete', 'TasksController@destroy');
 Route::get('/tasks/{task}', 'TasksController@show');
 

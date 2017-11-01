@@ -19,7 +19,7 @@
         <link href ="css/app.css" rel ="stylesheet">
     </head>
     <title>
-       Jackal
+       Laravel IS421
     </title>
         <body>
         <!-- Latest compiled and minified CSS -->
@@ -50,14 +50,14 @@
             <div class="container">
 
                 <div class="starter-template">
-                    <h1>Bootstrap starter template</h1>
-                    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-
+                    <h1>Task Master Web Application</h1>
+                    <p class="lead">This  is the Task Master Web Application.  This is sample working for CRUD functions.</p>
+                    <p>Below, if anything has been saved to the databse for a task, it will appear in order created.</p>
 
 
                     <!-- This is where the other pages show. -->
                     <p>@yield('content')</p>
-
+                    <p>To create a task, <a href="/heroku/public/tasks/create">Click Here</a></p>
                 </div>
 
             </div><!-- /.container -->

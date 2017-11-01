@@ -22,11 +22,9 @@ class TasksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Task $task)
+    public function create()
     {
-        //
-        $tasks = Task::find($task);
-        return view( 'tasks.create', compact('tasks'));
+        return view( 'tasks.create');
     }
 
     /**
@@ -35,14 +33,16 @@ class TasksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+        public function store()
     {
+
         //from keith
         $task = new Task;
         $task->body = request('body');
         $task->completed = request('completed');
         $task->save();
         return redirect('/tasks');
+
     }
 
     /**
@@ -66,9 +66,12 @@ class TasksController extends Controller
      */
     public function edit(Task $task)
     {
-        //
+        return view('tasks.edit',compact('task'));
     }
-
+    public function test()
+    {
+        return view('tasks.test');
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -76,8 +79,9 @@ class TasksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Task $task)
+    public function update( Task $task)
     {
+
         // from keith
         $task->body = request('body');
         $task->completed = request('completed');
