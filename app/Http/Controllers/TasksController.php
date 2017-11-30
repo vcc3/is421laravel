@@ -14,6 +14,8 @@ class TasksController extends Controller
     public function index()
     {
         $tasks = Task::all();
+        $userID = auth()->id();
+        $tasks = Task::where('user_id',$userID)->get();
         return view( 'tasks.index', compact('tasks'));
     }
 
@@ -35,9 +37,15 @@ class TasksController extends Controller
      */
         public function store()
     {
+    $this->validate(request(), [
 
+        'body' => 'required',
+        'completed' => 'required'
+
+    ]);
         //from keith
         $task = new Task;
+        $task->user_id = auth()->id();
         $task->body = request('body');
         $task->completed = request('completed');
         $task->save();
@@ -102,5 +110,13 @@ class TasksController extends Controller
 
         // redirect
         return redirect('/tasks');
+    }
+    // new stuff
+    public function comment(Task $task) {
+        $userID = auth()->id();
+
+        $task->addComment(request('body'), $userID);
+
+        return back();
     }
 }

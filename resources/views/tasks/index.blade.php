@@ -1,19 +1,40 @@
 @extends("layout")
 @section("content")
 <!-------------This is for the task pages--------------------->
-@foreach($tasks as $task)
-    <li>
-        <a href="/heroku/public/tasks/{{$task->id}}">
-            {{$task->body}}
-            {{$task->completed}}
-        </a>
+
+        <h1>Welcome to the Tasks Page.</h1>
+        <p>Welcome User, below is where you can find your current list of tasks at hands.  If there are no tasks, you can create a task by clicking the link below.</p>
+        @if($tasks->isEmpty())
+             <a href="/heroku/public/tasks/create">Click Here</a>
+        @else
 
 
+            <table>
+                <tr>
+                    <th>Task Id</th>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Task Created Date</th>
+                    <th>Task Updated Date</th>
+                </tr>
+                @foreach($tasks as $task)
+                <tr>
+                    <td>{{$task->id}}</td>
+                    <td> <a href="/heroku/public/tasks/{{$task->id}}">
+                            {{$task->body}}
+                        </a></td>
+                    <td>@if($task->completed == 0)
+                            InComplete
+                        @else
+                            Complete
+                        @endif</td>
+                    <td>{{$task->created_at}}</td>
+                    <td>{{$task->updated_at}}</td>
+                </tr>
+                @endforeach
+            </table>
 
-    </li>
-@endforeach
 
-
-
+        @endif
 
 @endsection

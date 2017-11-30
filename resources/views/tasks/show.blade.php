@@ -1,12 +1,35 @@
-<!-------------This is for task body or actual text page--------------------->
 @extends('layout')
 @section('content')
-    <h1>
-        List Number {{$task->id}}
-    </h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-5 col-md-6">
 
-    <p>{{$task->body}}</p>
-    <p>{{$task->completed}}</p>
-    <a href="/heroku/public/tasks/{{$task->id}}/edit">Link to Edit page</a>
+            <h1>Task Id: {{$task->id}}</h1>
+            <p>Task Content: {{$task->body}}</p>
+            <p>The current status of the task is : {{$task->completed}}</p>
+            <p>{{$task->created_at}}</p>
+            <p>{{$task->updated_at}}</p>
+
+        </div>
+    </div>
+    <div class ="row">
+        <div class="col-sm-5 col-md-6">
+            <ul>
+                @foreach($task->comments as $comment)
+                    <li class="list-group-item">
+                        {{$comment->body}}<br>
+                        <strong>
+                            Created: {{$comment->created_at->diffForHumans()}}
+                        </strong>
+                    </li>
+                @endforeach
+            </ul>
+
+            <a href="/heroku/public/tasks/{{$task->id}}/edit">Edit</a>
+        </div>
+    </div>
 
 @endsection
