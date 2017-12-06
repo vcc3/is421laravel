@@ -1,3 +1,5 @@
+<!--This index.blade.php is to view the current list of tasks created.
+If no task is created then a link for the create page is displayed.----->
 @extends("layout")
 @section("content")
 <!-------------This is for the task pages--------------------->

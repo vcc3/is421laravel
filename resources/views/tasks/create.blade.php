@@ -1,3 +1,5 @@
+<!--This create.blade.php is for the create a task form.----->
+
 @extends('layout')
 @section('content')
     <br>
@@ -8,13 +10,11 @@
     <br>
     <br>
     <br>
-
-
     <div class="starter-template">
 
         <div class ="container">
             <h1>Create a Task </h1>
-            <p>Please fill out the Body field below and choose if task is completed or not.</p>
+            <p>Please fill out the  field below and choose if task is completed or not.</p>
             <form action="/heroku/public/tasks" method="post" class="col-sm-8">
 
                 <div class="form-group">

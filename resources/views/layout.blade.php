@@ -23,17 +23,17 @@
     </title>
         <body>
         <!-- Latest compiled and minified CSS -->
-    <!---Layout for thr navabar---->
-    @include('Layout.navbar')
-    <!------------------------->
-
-
-
-     <div class = "container">
-         @yield('content')
-
-     </div>
+        <!---Layout for thr navabar---->
+        @include('Layout.navbar')
         <!------------------------->
+
+
+
+        <div class = "container">
+             @yield('content')
+
+        </div>
+            <!------------------------->
 
 
 
