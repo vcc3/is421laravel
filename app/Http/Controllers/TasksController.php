@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Task;
+use App\User;
 use Illuminate\Http\Request;
 
 class TasksController extends Controller
@@ -13,12 +14,17 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $tasks = Task::all();
         $userID = auth()->id();
-        $tasks = Task::where('user_id',$userID)->get();
-        return view( 'tasks.index', compact('tasks'));
-    }
+        $user = User::find($userID);
+        if($user != null) {
+            $tasks = $user->getTasks();
+            return view( 'tasks.index', compact('tasks'));
+        }
+        else{
+            return view('tasks.test', compact('tasks'));
+        }
 
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -62,7 +68,7 @@ class TasksController extends Controller
     //Task $task make sure that laravel accept a task object that get inputted into function
     public function show(Task $task)
     {
-
+        dd: $task;
         return view('tasks.show',compact('task'));
     }
 

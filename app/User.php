@@ -18,6 +18,12 @@ class User extends Authenticatable
     {
         return $this->hasMany( Task::class);
     }
+    public function getTasks(){
+
+        $tasks = Task::where('user_id',$this->id)->get();
+        return $tasks;
+
+    }
     protected $fillable = [
         'name', 'email', 'password',
     ];

@@ -8,12 +8,19 @@ class Task extends Model
 {
     //
     protected $guarded = array();
-    public function scopeIncomplete($query)
-    {
 
+
+    public function scopeIncomplete(Task $tasks)
+    {
+        //  $userID = auth()->id();
+        // return $tasks = Task::where('user_id',$userID)->get();
         //return $query->where('completed', 0);
     }
-    // use userid to return tasks from user
+    public function orderDate(){
+
+
+    }
+
 
 
     public function comments()

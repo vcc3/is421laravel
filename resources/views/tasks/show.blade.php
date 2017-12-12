@@ -14,16 +14,16 @@ including any comments added from the edit page. ----->
             <div class="col-sm-6">
 
                 <h1> Task Information:</h1>
-                <p> To edit any information, <a href="/heroku/public/tasks/{{$task->id}}/edit">click here</a></p>
+                <h4> To edit any information, <a href="/heroku/public/tasks/{{$task->id}}/edit">click here</a></h4>
 
-                    <p>Task ID:{{$task->id}}</p>
-                    <p>Task Name:{{$task->body}}</p>
+                    <p>Task ID: {{$task->id}}</p>
+                    <p>Task Name: {{$task->body}}</p>
                     <p>Task Status: {{$task->completed}}</p>
                     <p>Task Created on: {{$task->created_at}}</p>
                     <p>Task last updated on: {{$task->updated_at}}</p>
 
             </div>
-            <!---column  will contain the comments associated with task.->
+            <!---column  will contain the comments associated with task.--->
             <div class="col-sm-6">
                 <!---   --->
                <h1>Comments list:</h1>
