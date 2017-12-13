@@ -16,14 +16,45 @@ class TasksController extends Controller
     {
         $userID = auth()->id();
         $user = User::find($userID);
+
         if($user != null) {
-            $tasks = $user->getTasks();
+            // get takss associated from user return their list if logged in
+            $tasks =$user->getTasks();
             return view( 'tasks.index', compact('tasks'));
         }
         else{
+            //not logged in then return message for signing up or logging in
             return view('tasks.test', compact('tasks'));
         }
+    }
+    //function for sorting pages.
+    public function asc(){
+        $userID = auth()->id();
+        $user = User::find($userID);
 
+        if($user != null) {
+            // get takss associated from user return their list if logged in
+            $tasks =$user->getAscTasks();
+            return view( 'tasks.asc', compact('tasks'));
+        }
+        else{
+            //not logged in then return message for signing up or logging in
+            return view('tasks.test', compact('tasks'));
+        }
+    }
+    public function desc(){
+        $userID = auth()->id();
+        $user = User::find($userID);
+
+        if($user != null) {
+            // get takss associated from user return their list if logged in
+            $tasks =$user->getDescTasks();
+            return view( 'tasks.desc', compact('tasks'));
+        }
+        else{
+            //not logged in then return message for signing up or logging in
+            return view('tasks.test', compact('tasks'));
+        }
     }
     /**
      * Show the form for creating a new resource.

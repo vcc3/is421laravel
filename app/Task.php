@@ -16,9 +16,10 @@ class Task extends Model
         // return $tasks = Task::where('user_id',$userID)->get();
         //return $query->where('completed', 0);
     }
-    public function orderDate(){
+    public function orderDate(Task $tasks){
 
-
+        $tasks = $this->task()->getQuery()->orderBy('created_at', 'desc')->get();
+        return $tasks;
     }
 
 

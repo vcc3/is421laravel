@@ -15,10 +15,10 @@ If no task is created then a link for the create page is displayed.----->
                 <p>Sort By
                     <a href ="/heroku/public/tasks/desc"> Recent</a>  |
                     <a href ="/heroku/public/tasks/asc"> Oldest</a>
-
                 </p>
-            </div>
+                <button><a href ="/heroku/public/tasks" >Reset Order</a></button>
 
+            </div>
 
             @if($tasks->isEmpty())
                 <a href="/heroku/public/tasks/create">Click Here</a>

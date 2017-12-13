@@ -16,6 +16,8 @@
 Route::post('/tasks', 'TasksController@store');
 Route::get('/tasks/test','TasksController@test');
 Route::get('/tasks','TasksController@index');
+Route::get('/tasks/asc','TasksController@asc');
+Route::get('/tasks/desc','TasksController@desc');
 Route::get('/tasks/create', 'TasksController@create');
 Route::get('/tasks/{task}', 'TasksController@show');
 // keep this as is comments controlller wont work.
@@ -30,11 +32,9 @@ Route::get('/',function(){
     return  view('welcome');
 });
 
-
-
-
-
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+

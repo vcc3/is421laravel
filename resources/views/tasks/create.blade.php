@@ -5,15 +5,13 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <div class="container">
-        <hr>
         <div class ="row">
-            <div class ="col-md-8">
+           
+        </div>
+        <div class ="row">
+            <div class ="col-md-6">
+                <hr>
                 <h1>Create a Task </h1>
                 <p>Please fill out the  field below and choose if task is completed or not.</p>
                 <form action="/heroku/public/tasks" method="post">
@@ -32,10 +30,12 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Create Task</button>
                 </form>
+                <hr>
             </div>
+
         </div>
     </div>
-    <hr>
+
     @include('Layout.error')
 
 

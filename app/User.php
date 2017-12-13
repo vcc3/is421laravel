@@ -20,9 +20,20 @@ class User extends Authenticatable
     }
     public function getTasks(){
 
-        $tasks = Task::where('user_id',$this->id)->get();
-        return $tasks;
+    $tasks = Task::where('user_id',$this->id)->get();
+    return $tasks;
 
+}
+    public function getAscTasks(){
+        $userID= $this->id;
+        $tasks = Task::orderBy('created_at', 'asc')->where('user_id',$userID)->get();
+        return $tasks;
+    }
+
+    public function getDescTasks(){
+        $userID= $this->id;
+        $tasks = Task::orderBy('created_at', 'desc')->where('user_id',$userID)->get();
+        return $tasks;
     }
     protected $fillable = [
         'name', 'email', 'password',

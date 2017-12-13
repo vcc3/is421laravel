@@ -11,15 +11,16 @@ If no task is created then a link for the create page is displayed.----->
             <p>Welcome User, below is where you can find your current list of tasks at hands.  If there are no tasks, you can create a task by clicking the link below.</p>
 
 
+
             <div class="dropdown">
                 <p>Sort By
                     <a href ="/heroku/public/tasks/desc"> Recent</a>  |
                     <a href ="/heroku/public/tasks/asc"> Oldest</a>
-
                 </p>
+                <button><a href ="/heroku/public/tasks" >Reset Order</a></button>
+
             </div>
-
-
+          
             @if($tasks->isEmpty())
                 <a href="/heroku/public/tasks/create">Click Here</a>
             @else
