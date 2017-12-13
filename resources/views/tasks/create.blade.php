@@ -6,11 +6,9 @@
     <br>
     <br>
     <div class="container">
-        <div class ="row">
 
-        </div>
         <div class ="row">
-            <div class ="col-md-6">
+            <div class ="col-md-6 col-md-offset-2">
                 <hr>
                 <h1>Create a Task </h1>
                 <p>Please fill out the  field below and choose if task is completed or not.</p>

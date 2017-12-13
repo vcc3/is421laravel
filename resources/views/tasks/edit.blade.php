@@ -8,7 +8,7 @@
 <div class ="container">
     <div class ="row">
         <!-----Edit form/Delete button----->
-        <div class ="col-md-7">
+        <div class ="col-md-7 col-md-offset-2"">
             <h1>Edit Task Name and status here.</h1>
             <form action="/heroku/public/tasks/{{$task->id}}/edit" method="post">
 
@@ -47,7 +47,7 @@
 
         </div>
         <!-----Comments adding----->
-        <div class ="col-md-5">
+        <div class ="col-md-5 col-md-offset-2">
             <h1> Add comments here.</h1>
             <form action="/heroku/public/tasks/{{$task->id}}/comments" method="post">
                 {{ csrf_field() }}

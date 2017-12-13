@@ -5,7 +5,7 @@ If no task is created then a link for the create page is displayed.----->
 <!-------------This is for the task pages--------------------->
 <div class ="container"style="float:right">
     <div class ="row">
-        <div class ="col-md-6">
+        <div class ="col-md-6 col-md-offset-3">
 
             <h1>Welcome to the Tasks Page.</h1>
             <p>Welcome User, below is where you can find your current list of tasks at hands.  If there are no tasks, you can create a task by clicking the link below.</p>
