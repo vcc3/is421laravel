@@ -9,7 +9,7 @@
                             <div class ="col-md-12">
                                 <br>
                                 <!-------------This is for the main page--------------------->
-                                <img src ="/heroku/public/css/img/todo.jpg" width="auto" height="500px">
+                                <h1>Welcome To TaskMaster!!!!</h1>
 
                             </div>
                         </div>

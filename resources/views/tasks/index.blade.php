@@ -3,7 +3,7 @@ If no task is created then a link for the create page is displayed.----->
 @extends("layout")
 @section("content")
 <!-------------This is for the task pages--------------------->
-<div class ="container">
+<div class ="container"style="float:right">
     <div class ="row">
         <div class ="col-md-6">
 
